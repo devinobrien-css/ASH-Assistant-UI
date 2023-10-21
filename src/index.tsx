@@ -7,48 +7,9 @@ import { ToastContainer } from 'react-toastify';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import 'react-toastify/dist/ReactToastify.css';
+import { router } from './shared/components/Navigation/BrowserRouter';
 
 const queryClient = new QueryClient();
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Landing />,
-  },
-  {
-    path: '/admin',
-    element: <Admin />,
-    children: [
-      {
-        path: '/admin/people',
-        element: <PeopleAccess />,
-      },
-      {
-        path: '/admin/blogs',
-        element: <BlogAccess />,
-      },
-      {
-        path: '/admin/news',
-        element: <NewsAccess />,
-      },
-      {
-        path: '/admin/notifications',
-        element: <NotificationAccess />,
-      },
-      {
-        path: '/admin/affiliates',
-        element: <AffiliateAccess />,
-      },
-      {
-        path: '/admin/projects',
-        element: <ProjectAccess />,
-      },
-      {
-        path: '/admin/podcasts',
-        element: <></>,
-      },
-    ],
-  },
-]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
